@@ -132,7 +132,7 @@ public class Treg2DSim_GUI extends GUIState
 	{	
 		super(new TregSimulation(seed, 
 								TregSimulation.Dimension.TwoD, 
-								FileSystemIO.openXMLFile("parameters-testEfficiency.xml"),
+								FileSystemIO.openXMLFile("parameters.xml"),
 								1000000
 								));
 		

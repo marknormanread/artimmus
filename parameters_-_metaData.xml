@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<!-- THIS FILE SPECIFIES OPTIMISATION PARAMETERS -->
+
+<input>
+  <Simulation>
+  	<timeSlice>
+      <default>0.125</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulationCore</logicaltype>
+    </timeSlice> 								<!-- the number of hours that a timestep corresponds to. Works best if the timeslice divides cleanly from 1 -->
+  
+    <immunize>
+      <default>true</default>
+      <type>boolean</type>
+      <units>boolean</units>
+      <logictype>experimental</logicaltype>
+    </immunize>										<!-- boolean, 'true' or 'false' -->
+    <immunizationType>linear</immunizationType> <!-- string, 'linear' or 'exponential' -->
+ 
+ 		<immunizationLinearFreq>
+      <default>6.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </immunizationLinearFreq>
+		<immunizationLinearInitial>
+      <default>14</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </immunizationLinearInitial> 		
+		<immunizationLinearDC0>
+      <default>2.0</default>
+      <type>double</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </immunizationLinearDC0>
+		<immunizationLinearGradient>
+      <default>-0.005</default>
+      <type>double</type>
+      <units>cells per hour squared</units>
+      <logictype>simulation</logicaltype>
+    </immunizationLinearGradient>
+
+    <immunizationInitial>4</immunizationInitial>
+    <immunizationHalflife>15.0</immunizationHalflife>
+    
+    
+    <numCD4Th>
+      <default>40</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numCD4Th>   							<!-- int, positive -->
+    <numCD4Treg>
+      <default>30</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numCD4Treg>								<!-- int, positive -->
+    <numCD8Treg>
+      <default>30</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numCD8Treg>								<!-- int, positive -->
+    <numCNS>
+      <default>500</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numCNS>												<!-- int, positive -->
+    <numCNSMacrophage>
+      <default>75</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numCNSMacrophage>		<!-- int, positive -->
+    <numDC>
+      <default>10</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numDC>													<!-- int, positive -->
+    <numDCCNS>
+      <default>40</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numDCCNS>
+    <numDCSpleen>
+      <default>100</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </numDCSpleen>
+  </Simulation>
+  	
+
+  <TCell>
+  	<apoptosisNaiveMean>
+      <default>30.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </apoptosisNaiveMean>
+  	<apoptosisNaiveStdDev>
+      <default>17.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </apoptosisNaiveStdDev>
+  
+    <apoptosisPartialMaturityMean>
+      <default>12.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </apoptosisPartialMaturityMean>													<!-- double, greater than 0.0 -->
+    <apoptosisPartialMaturityStdDev>
+      <default>6.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </apoptosisPartialMaturityStdDev>											<!-- double, greater than 0.0 -->
+
+  	<AICDMean>
+      <default>60.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </AICDMean>																																<!-- the mean value of AICD, in hours, Double value -->    
+  	<AICDStdDev>
+      <default>56.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </AICDStdDev>																															<!-- the standard deviation of AICD, in hours. Double value -->
+  	
+  	<becomeEffectorMean>
+      <default>60.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </becomeEffectorMean>
+  	<becomeEffectorStdDev>
+      <default>56.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </becomeEffectorStdDev>
+
+  	<proliferationMean>
+      <default>19.2</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </proliferationMean>																								<!-- the mean value of proliferation, in hours. Double value -->  	
+  	<proliferationStdDev>
+      <default>9.6</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </proliferationStdDev>	
+																					<!-- the standard deviation of proliferation, in hours. Double value -->
+  	<cutoffThresholdForProlifWhenBindingLost>
+      <default>0.0</default>
+      <type>double</type>
+      <units>remaining proportion of total time</units>
+      <logictype>simulation</logicaltype>
+    </cutoffThresholdForProlifWhenBindingLost>
+  
+  	<cellsPerGridspace>
+      <default>7</default>
+      <type>integer</type>
+      <units>cells</units>
+      <logictype>simulation</logicaltype>
+    </cellsPerGridspace>
+  	
+  	<specificityUpperLimit>
+      <default>0.9</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </specificityUpperLimit>
+  	<specificityLowerLimit>
+      <default>0.5</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </specificityLowerLimit>
+  	
+  	<timeLocalActivationInducedEffectorFunctionFor>
+      <default>48.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeLocalActivationInducedEffectorFunctionFor>
+  	<timeLocalActivationDelay>
+      <default>10.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeLocalActivationDelay>
+  </TCell>	
+  	
+
+  <Th1Polarization>
+		<mhcUnExpressionDelayMean>
+      <default>8.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </mhcUnExpressionDelayMean>
+		<mhcUnExpressionDelayStdDev>
+      <default>2.00</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </mhcUnExpressionDelayStdDev>
+						
+		<type1SecretedPerHourWhenActivated>
+      <default>100.0</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </type1SecretedPerHourWhenActivated>								<!-- double, greater than 0.0 -->
+  </Th1Polarization>	
+
+	     	
+  <Th2Polarization>		
+  	<proliferationMean>
+      <default>28.8</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </proliferationMean>																								<!-- the mean value of proliferation, in hours. Double value --> 
+   	<proliferationStdDev>
+      <default>19.2</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </proliferationStdDev>																						<!-- the standard deviation of proliferation, in hours. Double value -->
+  	
+  	<type2SecretedPerHourWhenActivated>
+      <default>100.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </type2SecretedPerHourWhenActivated>								<!-- double, greater than 0.0 -->
+  </Th2Polarization>
+ 	
+  	
+  <CD4THelper> 	
+  	<diff00>
+      <default>0.05</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </diff00>
+  	<diff08>
+      <default>0.85</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </diff08>
+  </CD4THelper>
+  
+  
+  <CD4Treg>
+		<type1SecretedPerHourWhenActivated>
+      <default>10.0</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </type1SecretedPerHourWhenActivated>								<!-- double, greater than 0.0 -->
+  </CD4Treg>
+  	  	
+  	
+  <CD8Treg>
+		<type1SecretedPerHourWhenActivated>
+      <default>10.0</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </type1SecretedPerHourWhenActivated>								<!-- double, greater than 0.0 -->
+				
+		<cd8TregToCD4ThelperSpecificityDropOff>
+      <default>1.0</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </cd8TregToCD4ThelperSpecificityDropOff>
+  </CD8Treg>
+  	
+  <CNSCell>
+		<apoptosisSDAThreshold>
+      <default>5.0</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </apoptosisSDAThreshold>																		<!-- double, greater than 0.0 -->
+  </CNSCell>
+  
+
+  <APC> 		 
+   	<immatureDurationMean>
+      <default>48.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </immatureDurationMean>
+
+  	<immatureDurationStdDev>
+      <default>24.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </immatureDurationStdDev>
+   
+	  <costimExpressionDelayMean>0.0</costimExpressionDelayMean>																<!-- double, greater than 0.0 -->  
+	  <costimExpressionDelayStdDev>6.0</costimExpressionDelayStdDev>														<!-- double, greater than 0.0 -->
+	   
+	  <mhcExpressionDelayMean>0.0</mhcExpressionDelayMean>																			<!-- double, greater than 0.0 -->  
+	  <mhcExpressionDelayStdDev>6.0</mhcExpressionDelayStdDev>																	<!-- double, greater than 0.0 -->  
+
+		<timeOfDeathMean>
+      <default>110.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeOfDeathMean>
+		<timeOfDeathStdDev>
+      <default>48.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeOfDeathStdDev>
+		
+		<probabilityPhagocytosisToPeptide>
+      <default>0.02</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </probabilityPhagocytosisToPeptide>
+		
+  	<cellsPerGridspace>1</cellsPerGridspace>
+  </APC>
+  
+  
+  <CNSMacrophage>
+  	<basalMBPExpressionProbability>
+      <default>0.2</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </basalMBPExpressionProbability>
+  	
+		<type1RequiredForActivation>
+      <default>2.5</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </type1RequiredForActivation>															<!-- double, greater than 0 -->	  
+	  <sdaSecretedPerHourWhenStimulated>
+      <default>100.0</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </sdaSecretedPerHourWhenStimulatedSecretedPerHourWhenStimulated>																<!-- double, greater than 0.0 -->
+
+		<phagocytosisProbabilityImmature>
+      <default>0.7</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </phagocytosisProbabilityImmature>										<!-- double, between 0.0 and 1.0 -->
+		<phagocytosisProbabilityMature>
+      <default>0.3</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </phagocytosisProbabilityMature>												<!-- double, between 0.0 and 1.0 -->
+  </CNSMacrophage>
+
+  	
+  <DendriticCell>
+		<type1RequiredForActivation>
+      <default>2.0</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </type1RequiredForActivation>															<!-- double, greater than 0 -->		
+		
+		<phagocytosisProbabilityImmature>
+      <default>1.0</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </phagocytosisProbabilityImmature>										<!-- double, between 0.0 and 1.0 -->
+		<phagocytosisProbabilityMature>
+      <default>0.3</default>
+      <type>double</type>
+      <units>probability</units>
+      <logictype>simulation</logicaltype>
+    </phagocytosisProbabilityMature>												<!-- double, between 0.0 and 1.0 -->
+		
+		<type1SecretedPerHourImmunized>
+      <default>10.0</default>
+      <type>double</type>
+      <units>molecules</units>
+      <logictype>simulation</logicaltype>
+    </type1SecretedPerHourImmunized>
+		
+		<immunizedLengthOfTimeThatMBPExpressedFor>
+      <default>400.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </immunizedLengthOfTimeThatMBPExpressedFor>
+		
+		<cytokineType2PolarizationRatio>
+      <default>0.17</default>
+      <type>double</type>
+      <units>proportion</units>
+      <logictype>simulation</logicaltype>
+    </cytokineType2PolarizationRatio>
+  </DendriticCell>
+  
+  
+  <DendriticCellMigrates> 	
+  	<lengthOfTimeMovingFollowingMigration>
+      <default>3.5</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </lengthOfTimeMovingFollowingMigration>
+  </DendriticCellMigrates>
+  
+  
+  <Molecule>
+  	<molecularHalflife>
+      <default>0.5</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </molecularHalflife>																								<!-- double, greater than 0.0. The halflife of molecules in hours -->
+  	<decayThreshold>
+      <default>0.01</default>
+      <type>double</type>
+      <units>concentration</units>
+      <logictype>simulation</logicaltype>
+    </decayThreshold>
+  </Molecule>
+  
+  <Compartment>
+		<activatedTCellsFastTrackThroughSLOCompartments>true</activatedTCellsFastTrackThroughSLOCompartments> <!-- Boolean -->
+  </Compartment>
+  
+	<Circulation2D>
+		<width>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </width>																																					<!-- int, even and greater than 0 -->
+		<height>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </height>																																				<!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>
+      <default>5.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeToCrossOrgan>																											<!-- double, in hours-->
+	</Circulation2D>
+
+	<CNS2D>
+		<width>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </width>																																					<!-- int, even and greater than 0 -->
+		<height>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </height>																																				<!-- int, even and greater than 0 -->
+		
+		<TCellActivatedCanLeave>
+      <default>false</default>
+      <type>boolean</type>
+      <units>boolean</units>
+      <logictype>experimental</logicaltype>
+    </TCellActivatedCanLeave>																			<!-- boolean -->
+		<timeToCrossOrgan>
+      <default>20.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeToCrossOrgan>																											<!-- double, in hours-->
+	</CNS2D>
+
+	<CLN2D>
+		<width>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </width>																																					<!-- int, even and greater than 0 -->
+		<height>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </height>																																				<!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>
+      <default>12.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeToCrossOrgan>																											<!-- double, in hours-->
+	</CLN2D>
+	
+	<SLO2D>
+		<width>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </width>																																					<!-- int, even and greater than 0 -->
+		<height>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </height>																																				<!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>
+      <default>12.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeToCrossOrgan>																											<!-- double, in hours-->
+	</SLO2D>
+
+	<Spleen2D>
+		<width>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </width>																																					<!-- int, even and greater than 0 -->
+		<height>
+      <default>50</default>
+      <type>integer-even</type>
+      <units>grid spaces</units>
+      <logictype>simulation</logicaltype>
+    </height>																																				<!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>
+      <default>5.0</default>
+      <type>double</type>
+      <units>hours</units>
+      <logictype>simulation</logicaltype>
+    </timeToCrossOrgan>																											<!-- double, in hours-->
+	</Spleen2D>
+
+</input>

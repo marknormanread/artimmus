@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!-- THIS FILE SPECIFIES OPTIMISATION PARAMETERS -->
+
+<input>
+	<Simulation>
+		<timeSlice>0.125</timeSlice><!-- the number of hours that a timestep corresponds to. Works best if the timeslice divides cleanly from 1 -->
+	
+		<immunize>true</immunize>
+		<immunizationTime>0.0</immunizationTime>
+		<immunizationType>linear</immunizationType><!-- string, 'linear' or 'exponential' -->
+	 
+		<immunizationLinearFreq>6.0</immunizationLinearFreq>
+		<immunizationLinearInitial>14</immunizationLinearInitial>
+		<immunizationLinearDC0>2</immunizationLinearDC0>
+		<immunizationLinearGradient>-0.005</immunizationLinearGradient>
+
+		<immunizationInitial>4</immunizationInitial>
+		<immunizationHalflife>15.0</immunizationHalflife>
+		
+		<secondImmunization>false</secondImmunization>
+		<secondImmunizationStartTime>200.0</secondImmunizationStartTime>
+		
+		<numCD4Th>40</numCD4Th>
+		<numCD4Treg>30</numCD4Treg>
+		<numCD8Treg>30</numCD8Treg>
+		<numCNS>500</numCNS>
+		<numCNSMacrophage>75</numCNSMacrophage>
+		<numDC>10</numDC>
+		<numDCCNS>40</numDCCNS>
+		<numDCSpleen>100</numDCSpleen>
+	</Simulation>
+		
+ 
+	<TCell>
+		<apoptosisNaiveMean>30.0</apoptosisNaiveMean>
+		<apoptosisNaiveStdDev>17.0</apoptosisNaiveStdDev>
+		<apoptosisPartialMaturityMean>12.0</apoptosisPartialMaturityMean>
+		<apoptosisPartialMaturityStdDev>6.0</apoptosisPartialMaturityStdDev>
+		
+		<AICDMean>60.0</AICDMean>
+		<AICDStdDev>56.0</AICDStdDev>
+		
+		<becomeEffectorMean>60.0</becomeEffectorMean>
+		<becomeEffectorStdDev>56.0</becomeEffectorStdDev>
+
+		<proliferationMean>19.2</proliferationMean>
+		<proliferationStdDev>9.6</proliferationStdDev>
+
+		<cutoffThresholdForProlifWhenBindingLost>0.0</cutoffThresholdForProlifWhenBindingLost>
+		<cellsPerGridspace>7</cellsPerGridspace>
+		
+		<specificityUpperLimit>0.9</specificityUpperLimit>
+		<specificityLowerLimit>0.5</specificityLowerLimit>
+		
+		<timeLocalActivationInducedEffectorFunctionFor>48.0</timeLocalActivationInducedEffectorFunctionFor>
+		<timeLocalActivationDelay>10.0</timeLocalActivationDelay>
+	</TCell>	
+		
+
+	<Th1Polarization>
+		<mhcUnExpressionDelayMean>8.0</mhcUnExpressionDelayMean>
+		<mhcUnExpressionDelayStdDev>2.00</mhcUnExpressionDelayStdDev>
+						
+		<type1SecretedPerHourWhenActivated>100.0</type1SecretedPerHourWhenActivated>
+	</Th1Polarization>	
+
+		 	
+	<Th2Polarization>		
+		<proliferationMean>28.8</proliferationMean>
+	 	<proliferationStdDev>19.2</proliferationStdDev>
+		<type2SecretedPerHourWhenActivated>100.0</type2SecretedPerHourWhenActivated>
+	</Th2Polarization>
+		
+		
+	<CD4THelper> 	
+		<diff00>0.05</diff00>
+		<diff08>0.85</diff08>
+	</CD4THelper>
+	
+	
+	<CD4Treg>
+		<type1SecretedPerHourWhenActivated>10.0</type1SecretedPerHourWhenActivated>
+	</CD4Treg>
+				
+		
+	<CD8Treg>
+		<type1SecretedPerHourWhenActivated>10.0</type1SecretedPerHourWhenActivated>				
+		<cd8TregToCD4ThelperSpecificityDropOff>1.0</cd8TregToCD4ThelperSpecificityDropOff>
+	</CD8Treg>
+		
+
+	<CNSCell>
+		<apoptosisSDAThreshold>5.0</apoptosisSDAThreshold>
+	</CNSCell>
+	
+
+	<APC> 		 
+	 	<immatureDurationMean>48.0</immatureDurationMean>
+		<immatureDurationStdDev>24.0</immatureDurationStdDev>
+	 
+		<costimExpressionDelayMean>0.0</costimExpressionDelayMean>
+		<costimExpressionDelayStdDev>6.0</costimExpressionDelayStdDev>
+		 
+		<mhcExpressionDelayMean>0.0</mhcExpressionDelayMean>
+		<mhcExpressionDelayStdDev>6.0</mhcExpressionDelayStdDev>
+
+		<timeOfDeathMean>110.0</timeOfDeathMean>
+		<timeOfDeathStdDev>48.0</timeOfDeathStdDev>
+		
+		<probabilityPhagocytosisToPeptide>0.02</probabilityPhagocytosisToPeptide>
+		
+		<cellsPerGridspace>1</cellsPerGridspace>
+	</APC>
+	
+	
+	<CNSMacrophage>
+		<basalMBPExpressionProbability>0.2</basalMBPExpressionProbability>
+		
+		<type1RequiredForActivation>2.5</type1RequiredForActivation>
+		<sdaSecretedPerHourWhenStimulated>100.0</sdaSecretedPerHourWhenStimulated>
+
+		<phagocytosisProbabilityImmature>0.7</phagocytosisProbabilityImmature>
+		<phagocytosisProbabilityMature>0.3</phagocytosisProbabilityMature>
+	</CNSMacrophage>
+
+		
+	<DendriticCell>
+		<type1RequiredForActivation>2.0</type1RequiredForActivation>
+		
+		<phagocytosisProbabilityImmature>1.0</phagocytosisProbabilityImmature>
+		<phagocytosisProbabilityMature>0.3</phagocytosisProbabilityMature>
+		
+		<type1SecretedPerHourImmunized>10.0</type1SecretedPerHourImmunized>
+		
+		<immunizedLengthOfTimeThatMBPExpressedFor>400.0</immunizedLengthOfTimeThatMBPExpressedFor>
+		
+		<cytokineType2PolarizationRatio>0.17</cytokineType2PolarizationRatio>
+	</DendriticCell>
+	
+	
+	<DendriticCellMigrates> 	
+		<lengthOfTimeMovingFollowingMigration>3.5</lengthOfTimeMovingFollowingMigration>
+	</DendriticCellMigrates>
+	
+	
+	<Molecule>
+		<molecularHalflife>0.5</molecularHalflife>
+		<decayThreshold>0.01</decayThreshold>
+	</Molecule>
+	
+	<Compartment>
+		<activatedTCellsFastTrackThroughSLOCompartments>true</activatedTCellsFastTrackThroughSLOCompartments>
+	</Compartment>
+	
+	<Circulation2D>
+		<width>62</width><!-- int, even and greater than 0 -->
+		<height>40</height><!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>5.0</timeToCrossOrgan><!-- double, in hours-->
+	</Circulation2D>
+
+	<CNS2D>
+		<width>50</width><!-- int, even and greater than 0 -->
+		<height>50</height><!-- int, even and greater than 0 -->
+		
+		<TCellActivatedCanLeave>false</TCellActivatedCanLeave>
+		<timeToCrossOrgan>20.0</timeToCrossOrgan>
+	</CNS2D>
+
+	<CLN2D>
+		<width>50</width><!-- int, even and greater than 0 -->
+		<height>50</height><!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>12.0</timeToCrossOrgan>
+	</CLN2D>
+	
+	<SLO2D>
+		<width>50</width><!-- int, even and greater than 0 -->
+		<height>50</height><!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>12.0</timeToCrossOrgan>
+	</SLO2D>
+
+	<Spleen2D>
+		<width>62</width><!-- int, even and greater than 0 -->
+		<height>40</height><!-- int, even and greater than 0 -->
+		<timeToCrossOrgan>5.0</timeToCrossOrgan>
+	</Spleen2D>
+	
+
+	<CD200>
+		<cd200CytokineSwitching>false</cd200CytokineSwitching>
+		<cd200GradualReductionPrimingCapacity>false</cd200GradualReductionPrimingCapacity>
+		<cd200PrimingCapacityReductionFactor>1.0</cd200PrimingCapacityReductionFactor>
+	</CD200>
+</input>

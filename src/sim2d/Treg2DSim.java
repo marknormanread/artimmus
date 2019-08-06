@@ -13,7 +13,7 @@ public class Treg2DSim
 		
     	TregSimulation sim = new TregSimulation(0, 
     											TregSimulation.Dimension.TwoD,
-    											FileSystemIO.openXMLFile("parameters-testEfficiency.xml"),
+    											FileSystemIO.openXMLFile("parameters.xml"),
     											180
     											);
     	TregSimulation.sim.setupSimulationParameters();						// essential that we do this here.
